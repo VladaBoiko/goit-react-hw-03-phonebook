@@ -20,14 +20,12 @@ export const ContactList = ({ states, removeContact }) => {
 };
 
 ContactList.propTypes = {
-  states: PropTypes.array({
-    name: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    contacts: PropTypes.shape({
-      name: PropTypes.string.isRequared,
-      id: PropTypes.string.isRequared,
-      number: PropTypes.string.isRequared,
-    }),
-  }),
+  states: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
   removeContact: PropTypes.func.isRequired,
 };
